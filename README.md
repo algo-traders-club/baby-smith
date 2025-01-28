@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="img/baby-smith.png" alt="Baby Smith Logo" width="200"/>
+
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Dependencies Status](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)](https://github.com/hydralabs-sh/baby-smith/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Aapp%2Fdependabot)
@@ -229,6 +231,7 @@ The developers of Baby Smith take no responsibility and assume no liability for 
 
 For questions and support:
 
+- Join the [Hyperliquid Discord](https://discord.gg/hyperliquid)
 - Visit the [Hyperliquid Documentation](https://hyperliquid.xyz/docs)
 
 ---
