@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "agent-smith"
+version = "0.1.0"
+description = "Your description here"
+authors = ["Your Name <your.email@example.com>"]
+packages = [
+    { include = "agent_smith", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "^1.0.0"
+pydantic = ">=2.0"
+pydantic-settings = "^2.1.0"
+loguru = "^0.7.2"
+hyperliquid-python-sdk = { git = "https://github.com/hyperliquid-dex/hyperliquid-python-sdk.git" }
+streamlit = "^1.29.0"
+plotly = "^5.18.0"
+pandas = "^2.1.4"
+rich = "^13.9.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+black = "^23.11.0"
+isort = "^5.12.0"
+mypy = "^1.7.1"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line-length = 100
+multi_line_output = 3
+
+[tool.poetry.scripts]
+agent-smith = "agent_smith.main:main"
+dashboard = "agent_smith.dashboard:main"

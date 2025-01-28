@@ -1,0 +1,11 @@
+streamlit>=1.30.0
+pandas>=2.0.0
+plotly>=5.18.0
+hyperliquid-python-sdk>=0.0.7
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+loguru>=0.7.0
+eth_account>=0.9.0
+rich>=13.0.0
+numpy>=1.24.0
+websocket-client>=1.6.0
