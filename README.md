@@ -314,4 +314,4 @@ For questions and support:
 
 **Remember:** This is experimental software for educational purposes. Never trade with more money than you can afford to lose.
 
-© Copyright 2025 Algot Traders Club LLC - MIT License
+© Copyright 2025 Algo Traders Club LLC - MIT License
