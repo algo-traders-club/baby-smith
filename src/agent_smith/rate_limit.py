@@ -54,14 +54,14 @@ class RateLimitHandler:
             
         return True, "OK"
 
-    def on_request(self):
+    def on_request(self) -> None:
         """Track a new request"""
         now = datetime.now()
         self.last_request_time = now
         self.request_count += 1
         self.requests_this_minute += 1
 
-    def on_success(self, volume: float = 0.0):
+    def on_success(self, volume: float = 0.0) -> None:
         """Handle successful request"""
         self.consecutive_fails = 0
         self.last_success_time = datetime.now()
@@ -102,7 +102,7 @@ class RateLimitHandler:
                 
         return params
 
-    def on_rate_limit_error(self):
+    def on_rate_limit_error(self) -> None:
         """Handle rate limit error with better backoff"""
         self.consecutive_fails += 1
         self.rate_limit_hits += 1

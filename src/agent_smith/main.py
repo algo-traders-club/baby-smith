@@ -35,7 +35,7 @@ def initialize_config() -> TradingConfig:
     
     return config
 
-def main():
+def main() -> None:
     # Setup logging
     setup_logging()
     print_startup_banner()

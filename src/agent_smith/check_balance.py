@@ -1,11 +1,9 @@
-from hyperliquid.utils import constants
-from hyperliquid.exchange import Exchange
 from hyperliquid.info import Info
 import eth_account
 from agent_smith.config import config
 from loguru import logger
 
-def check_wallet_connection():
+def check_wallet_connection() -> None:
     """Diagnostic check of wallet connection"""
     try:
         # Initialize clients

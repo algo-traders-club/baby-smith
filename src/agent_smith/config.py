@@ -25,7 +25,7 @@ class TradingConfig(BaseModel):
     is_testnet: bool = True  # Added for network tracking
     
     @classmethod
-    def from_env(cls):
+    def from_env(cls) -> 'TradingConfig':
         """Create configuration from environment variables"""
         # Choose network
         is_testnet = os.getenv("HL_TESTNET", "true").lower() == "true"
@@ -52,3 +52,9 @@ class TradingConfig(BaseModel):
             max_open_orders=int(os.getenv("HL_MAX_OPEN_ORDERS", "4")),
             leverage=int(os.getenv("HL_LEVERAGE", "3"))
         )
+
+# Create a default config instance for convenience
+config = TradingConfig.from_env()
+
+# Also alias Config to TradingConfig for compatibility 
+Config = TradingConfig

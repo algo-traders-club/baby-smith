@@ -1,6 +1,5 @@
-import sys
 from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Dict, Optional, Any
 
 from loguru import logger
 from rich.console import Console
@@ -19,7 +18,7 @@ console = Console(theme=Theme({
     "position": "bright_yellow"
 }))
 
-def print_startup_banner():
+def print_startup_banner() -> None:
     """Print a styled startup banner"""
     console.print("\n")
     console.print("=" * 80, style="cyan")
@@ -32,7 +31,7 @@ def format_number(num: float, decimals: int = 2) -> str:
     """Format number with thousand separators and fixed decimals"""
     return f"{num:,.{decimals}f}"
 
-def setup_logging():
+def setup_logging() -> None:
     """Configure logging with custom format and handlers"""
     # Remove default handler
     logger.remove()
@@ -54,7 +53,7 @@ def setup_logging():
         level="INFO"
     )
 
-def console_handler(message: Dict[str, Any]):
+def console_handler(message: Dict[str, Any]) -> None:
     """Custom console handler with rich formatting"""
     record = message.record
     time_str = record["time"].strftime("%H:%M:%S")
@@ -76,7 +75,7 @@ def console_handler(message: Dict[str, Any]):
     else:
         console.print(f"[timestamp]{time_str}[/] [info]{record['message']}[/]")
 
-def format_price_message(time_str: str, message: str):
+def format_price_message(time_str: str, message: str) -> None:
     """Format price-related messages"""
     try:
         if "current price" in message.lower():
@@ -90,7 +89,7 @@ def format_price_message(time_str: str, message: str):
     except Exception:
         console.print(f"[timestamp]{time_str}[/] [info]{message}[/]")
 
-def format_position_message(time_str: str, message: str):
+def format_position_message(time_str: str, message: str) -> None:
     """Format position-related messages"""
     try:
         if "position" in message.lower():
@@ -106,7 +105,7 @@ def format_position_message(time_str: str, message: str):
     except Exception:
         console.print(f"[timestamp]{time_str}[/] [info]{message}[/]")
 
-def format_order_message(time_str: str, message: str):
+def format_order_message(time_str: str, message: str) -> None:
     """Format order-related messages"""
     try:
         if "success" in message.lower():
@@ -120,46 +119,9 @@ def format_order_message(time_str: str, message: str):
     except Exception:
         console.print(f"[timestamp]{time_str}[/] [info]{message}[/]")
 
-def format_debug_state(book_msg: Dict, market_state: Optional[Dict] = None) -> str:
-    """Format detailed debug state information"""
-    debug_str = "\nDEBUG STATE\n" + "-" * 40 + "\n"
-    
-    try:
-        if book_msg and 'levels' in book_msg:
-            bids = book_msg['levels'][0] if len(book_msg['levels']) > 0 else []
-            asks = book_msg['levels'][1] if len(book_msg['levels']) > 1 else []
-            
-            debug_str += "ORDER BOOK:\n"
-            if len(bids) > 0:
-                debug_str += f"Best Bid: ${float(bids[0]['px']):.4f} x {float(bids[0]['sz']):.4f}\n"
-            if len(asks) > 0:
-                debug_str += f"Best Ask: ${float(asks[0]['px']):.4f} x {float(asks[0]['sz']):.4f}\n"
-                
-            debug_str += f"Bid Levels: {len(bids)}, Ask Levels: {len(asks)}\n"
-        
-        if market_state:
-            debug_str += "\nMARKET STATE:\n"
-            for key, value in market_state.items():
-                debug_str += f"{key}: {value}\n"
-                
-    except Exception as e:
-        debug_str += f"\nError formatting debug state: {str(e)}\n"
-        
-    debug_str += "-" * 40
-    return debug_str
 
-def setup_debug_logging():
-    """Setup additional debug logging handlers"""
-    logger.add(
-        "logs/debug_{time:YYYY-MM-DD}.log",
-        rotation="12:00",
-        retention="3 days",
-        format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {level: <8} | {message}",
-        level="DEBUG",
-        filter=lambda record: record["level"].name == "DEBUG"
-    )
 
-def print_status_update(state: Dict[str, Any]):
+def print_status_update(state: Dict[str, Any]) -> None:
     """Print a formatted status update"""
     console.print("\n[cyan]Status Update[/]")
     console.print("-" * 40, style="dim cyan")
