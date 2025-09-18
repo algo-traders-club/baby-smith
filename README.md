@@ -20,8 +20,9 @@ A **comprehensive, modular** autonomous trading agent for [Hyperliquid](https://
 **Baby Smith has been completely refactored!** The codebase has been transformed from a monolithic structure into a modern, modular architecture. See [CLAUDE.md](CLAUDE.md) for detailed refactoring documentation.
 
 ### Key Improvements
+
 - ✅ **Modular Architecture** - Clean separation of concerns
-- ✅ **Advanced Error Handling** - Comprehensive exception hierarchy  
+- ✅ **Advanced Error Handling** - Comprehensive exception hierarchy
 - ✅ **Type Safety** - Full type annotations throughout
 - ✅ **Zero Dead Code** - Optimized and cleaned codebase
 - ✅ **Enhanced Monitoring** - Improved dashboard and logging
@@ -64,7 +65,7 @@ Baby Smith is a **sophisticated, modular** autonomous trading agent for Hyperliq
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/hydralabs-sh/baby-smith.git
+git clone https://github.com/baby-smith/baby-smith.git
 cd baby-smith
 ```
 
@@ -100,7 +101,7 @@ docker compose up
 1. Clone and enter the repository:
 
 ```bash
-git clone https://github.com/hydralabs-sh/baby-smith.git
+git clone https://github.com/baby-smith/baby-smith.git
 cd baby-smith
 ```
 
@@ -140,24 +141,28 @@ poetry run python -m agent_smith.main
 Baby Smith v2.0 features a **modular, scalable architecture**:
 
 ### Core Modules (`src/agent_smith/core/`)
+
 - `trading_engine.py` - Main orchestration and trading loop management
-- `market_data.py` - Real-time market data fetching and validation  
+- `market_data.py` - Real-time market data fetching and validation
 - `order_manager.py` - Order execution, verification, and management
 - `position_manager.py` - Position tracking and risk metrics
 
 ### Strategy Modules (`src/agent_smith/strategies/`)
+
 - `enhanced_market_maker.py` - Advanced market making with momentum analysis
 - `risk_manager.py` - Comprehensive risk management system
 - `momentum_analyzer.py` - Technical analysis and signal generation
 - `order_utils.py` - Order processing and validation utilities
 
 ### Dashboard Modules (`src/agent_smith/dashboard/`)
+
 - `main.py` - Dashboard orchestration and rendering
 - `data_fetchers.py` - Data collection and processing
 - `chart_components.py` - Interactive charts and visualizations
 - `ui_components.py` - User interface components and styling
 
 ### Exception Handling (`src/agent_smith/exceptions/`)
+
 - Custom exception hierarchy for robust error handling
 - Specific exceptions for different error scenarios
 - Graceful error recovery and logging
@@ -179,22 +184,26 @@ The agent provides a real-time dashboard at `http://localhost:8501` showing:
 **Enhanced risk management system** with multiple layers of protection:
 
 ### Position Management
+
 - **Dynamic position limits** based on market conditions
 - **Automated position reduction** when limits are approached
 - **Real-time utilization monitoring** with alerts
 
 ### Order Safety
+
 - **Pre-execution validation** for all orders
 - **Slippage protection** with dynamic adjustment
 - **Order size validation** against minimum notional requirements
 - **Price deviation checks** to prevent errant orders
 
 ### Market Conditions
+
 - **Spread threshold monitoring** - avoid trading in illiquid conditions
 - **Volatility-based adjustments** - reduce exposure during high volatility
 - **Rate limiting with exponential backoff** - prevent API violations
 
 ### Performance-Based Controls
+
 - **Consecutive loss limits** - pause trading after multiple losses
 - **Win rate monitoring** - adjust strategy based on performance
 - **Risk metrics tracking** - comprehensive performance analysis
@@ -202,6 +211,7 @@ The agent provides a real-time dashboard at `http://localhost:8501` showing:
 ## What's New in v2.0
 
 ### 🎯 **Complete Refactoring**
+
 The entire codebase has been refactored from a monolithic structure (1600+ line files) into a clean, modular architecture:
 
 - **File size reduction**: All files now under 500 lines
@@ -211,17 +221,19 @@ The entire codebase has been refactored from a monolithic structure (1600+ line 
 - **Error handling**: Comprehensive exception hierarchy with specific error types
 
 ### 📊 **Before vs After**
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Max file size | 1,651 lines | 366 lines | -78% |
-| Files > 500 lines | 3 files | 0 files | ✅ |
-| Dead code | 120+ lines | 0 lines | ✅ |
-| Type coverage | ~20% | ~95% | +75% |
+
+| Metric            | Before      | After     | Improvement |
+| ----------------- | ----------- | --------- | ----------- |
+| Max file size     | 1,651 lines | 366 lines | -78%        |
+| Files > 500 lines | 3 files     | 0 files   | ✅          |
+| Dead code         | 120+ lines  | 0 lines   | ✅          |
+| Type coverage     | ~20%        | ~95%      | +75%        |
 
 ### 🔧 **Technical Improvements**
+
 - **Dependency injection** for better testability
 - **Event-driven architecture** with proper separation
-- **Centralized configuration** with environment variable support  
+- **Centralized configuration** with environment variable support
 - **Comprehensive logging** with structured output
 - **Performance optimizations** throughout
 
