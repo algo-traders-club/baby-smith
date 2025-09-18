@@ -9,12 +9,12 @@ To run the dashboard:
     streamlit run src/agent_smith/dashboard.py
 """
 
-from agent_smith.dashboard.main import main
+from .dashboard.main import main
 
 # Legacy import compatibility
-from agent_smith.dashboard.data_fetchers import DashboardDataFetcher
-from agent_smith.dashboard.chart_components import ChartManager  
-from agent_smith.dashboard.ui_components import UIComponentManager
+from .dashboard.data_fetchers import DashboardDataFetcher
+from .dashboard.chart_components import ChartManager
+from .dashboard.ui_components import UIComponentManager
 
 # Re-export main function for backward compatibility
 __all__ = ['main', 'DashboardDataFetcher', 'ChartManager', 'UIComponentManager']
