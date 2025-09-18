@@ -231,17 +231,9 @@ class TradingEngine:
         try:
             if not self.metrics_tracker:
                 return
-                
-            # Update market metrics
-            self.metrics_tracker.update_market_data(
-                mark_price=market_state.mark_price,
-                best_bid=market_state.best_bid,
-                best_ask=market_state.best_ask
-            )
-            
-            # Update position metrics
-            position_metrics = self.position_manager.get_position_metrics(market_state)
-            self.metrics_tracker.update_position_data(position_metrics)
+
+            # Update metrics using the existing method
+            self.metrics_tracker.update_metrics()
             
         except Exception as e:
             logger.error(f"Error updating metrics: {e}")

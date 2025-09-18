@@ -203,7 +203,7 @@ class AgentSmith:
             
             # Initialize metrics tracker (optional)
             try:
-                self.metrics_tracker = MetricsTracker()
+                self.metrics_tracker = MetricsTracker(self.info, self.config.account_address)
             except Exception as e:
                 logger.warning(f"Could not initialize metrics tracker: {e}")
                 self.metrics_tracker = None
@@ -250,7 +250,9 @@ class AgentSmith:
                 'entry_price': position_state.get('entry_price', 0),
                 'account_value': 0,  # This would need to be calculated
                 'current_price': 0,  # This would need to be fetched
-                'pnl': 0  # This would need to be calculated
+                'pnl': 0,  # This would need to be calculated
+                'asset': self.config.asset,
+                'volume': 0  # 24h volume - would need to be fetched
             }
             
             # Get current market price

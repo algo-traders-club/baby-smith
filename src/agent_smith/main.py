@@ -61,7 +61,7 @@ def main() -> None:
         # Print initial status
         initial_state = {
             'account_value': account_value if 'account_value' in locals() else 0,
-            'position': agent.position or 0,
+            'position': agent.get_position(),
             'asset': config.asset,
             'current_price': float(agent.info.all_mids().get(config.asset, 0)),
             'volume': 0,
