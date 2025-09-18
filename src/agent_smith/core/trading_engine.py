@@ -7,15 +7,15 @@ from typing import List, Optional
 from datetime import datetime, timedelta
 from loguru import logger
 
-from agent_smith.core.market_data import MarketDataManager
-from agent_smith.core.order_manager import OrderManager
-from agent_smith.core.position_manager import PositionManager
-from agent_smith.strategies.enhanced_market_maker import EnhancedPerpMarketMaker
-from agent_smith.strategies.position_reducer import PositionReducer
-from agent_smith.trading_types import PerpMarketState, Order
-from agent_smith.config import TradingConfig
-from agent_smith.metrics import MetricsTracker
-from agent_smith.exceptions import TradingException, MarketDataException
+from .market_data import MarketDataManager
+from .order_manager import OrderManager
+from .position_manager import PositionManager
+from ..strategies.enhanced_market_maker import EnhancedPerpMarketMaker
+from ..strategies.position_reducer import PositionReducer
+from ..trading_types import PerpMarketState, Order
+from ..config import TradingConfig
+from ..metrics import MetricsTracker
+from ..exceptions import TradingException, MarketDataException
 
 
 class TradingEngine:

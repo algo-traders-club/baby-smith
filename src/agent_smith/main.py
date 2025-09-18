@@ -3,9 +3,9 @@ import os
 from dotenv import load_dotenv
 from loguru import logger
 
-from agent_smith.agent import AgentSmith
-from agent_smith.config import TradingConfig
-from agent_smith.logging_utils import (
+from .agent import AgentSmith
+from .config import TradingConfig
+from .logging_utils import (
     setup_logging,
     print_startup_banner,
     print_status_update,

@@ -9,12 +9,12 @@ from hyperliquid.exchange import Exchange
 from hyperliquid.info import Info
 from loguru import logger
 
-from agent_smith.config import TradingConfig
-from agent_smith.metrics import MetricsTracker
-from agent_smith.rate_limit import RateLimitHandler
-from agent_smith.core import TradingEngine, MarketDataManager, OrderManager, PositionManager
-from agent_smith.exceptions import TradingException, ConfigurationException
-from agent_smith.logging_utils import logger, print_status_update
+from .config import TradingConfig
+from .metrics import MetricsTracker
+from .rate_limit import RateLimitHandler
+from .core import TradingEngine, MarketDataManager, OrderManager, PositionManager
+from .exceptions import TradingException, ConfigurationException
+from .logging_utils import print_status_update
 
 
 class AgentSmith:

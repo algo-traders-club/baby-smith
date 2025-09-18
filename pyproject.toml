@@ -41,4 +41,5 @@ multi_line_output = 3
 
 [tool.poetry.scripts]
 agent-smith = "agent_smith.main:main"
+baby-smith = "agent_smith.main:main"
 dashboard = "agent_smith.dashboard:main"

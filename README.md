@@ -15,9 +15,9 @@ A **comprehensive, modular** autonomous trading agent for [Hyperliquid](https://
 
 </div>
 
-## 🎉 Major Update - Version 2.0
+## 🎉 Major Update - Version 2.0 ✅ FULLY OPERATIONAL
 
-**Baby Smith has been completely refactored!** The codebase has been transformed from a monolithic structure into a modern, modular architecture. See [CLAUDE.md](CLAUDE.md) for detailed refactoring documentation.
+**Baby Smith has been completely refactored and is now fully operational!** The codebase has been transformed from a monolithic structure into a modern, modular architecture. All import issues have been resolved and the agent is successfully running. See [CLAUDE.md](CLAUDE.md) for detailed refactoring documentation.
 
 ### Key Improvements
 
@@ -119,6 +119,12 @@ cp .env.template .env
 ```
 
 4. Run the agent:
+
+```bash
+poetry run baby-smith
+```
+
+Or alternatively:
 
 ```bash
 poetry run python -m agent_smith.main
@@ -268,6 +274,12 @@ poetry run pytest
 ```
 
 5. Run the agent:
+
+```bash
+poetry run baby-smith
+```
+
+Or alternatively:
 
 ```bash
 poetry run python -m agent_smith.main

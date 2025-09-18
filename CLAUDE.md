@@ -403,7 +403,68 @@ The result is a more maintainable, robust, and scalable trading system that foll
 
 ---
 
-**Refactoring completed by**: Claude Code  
-**Date**: January 2025  
-**Total time investment**: Comprehensive analysis and implementation  
-**Code quality improvement**: Significant across all metrics  
+## Post-Refactoring Updates - September 2025
+
+### Module Import Issues Fixed ✅
+
+After the comprehensive refactoring, several import issues were discovered and resolved:
+
+#### Issues Identified
+1. **Module-level instantiation in config.py**: The `config = TradingConfig.from_env()` line was causing validation errors at import time when environment variables weren't set
+2. **Absolute imports in modules**: Many modules were using absolute imports (`from agent_smith.module import Class`) instead of relative imports
+3. **Poetry installation required**: The project needed `poetry install` to properly register the package and entry points
+
+#### Fixes Applied
+1. **Removed module-level config instantiation** in `src/agent_smith/config.py:57`
+   - Removed the problematic line that was creating a default config at import time
+   - Kept the `Config` alias for backward compatibility
+
+2. **Fixed import statements** in multiple files:
+   - `src/agent_smith/agent.py`: Changed absolute imports to relative imports
+   - `src/agent_smith/main.py`: Changed absolute imports to relative imports
+   - `src/agent_smith/core/trading_engine.py`: Fixed imports to use relative paths
+
+3. **Poetry installation**: Ran `poetry install` to properly register the package and entry points
+
+#### Current Status ✅ FULLY OPERATIONAL
+
+The Baby Smith trading agent is now **fully operational**:
+
+```bash
+# Successfully runs with no errors
+poetry run baby-smith
+
+# Output shows:
+# ================================================================================
+#                              AGENT SMITH v1.0
+#                         HyperLiquid Trading Agent
+# ================================================================================
+#
+# Initialized configuration for ETH on mainnet
+# Initializing Agent Smith...
+# All components initialized successfully
+# Trading engine started and monitoring positions
+```
+
+#### Entry Points Working
+- ✅ `poetry run baby-smith` - Primary entry point
+- ✅ `poetry run agent-smith` - Alternative entry point
+- ✅ `poetry run dashboard` - Dashboard entry point
+- ✅ `python -m agent_smith.main` - Direct module execution
+
+#### Architecture Integrity Maintained
+- ✅ All modular architecture benefits preserved
+- ✅ No breaking changes to functionality
+- ✅ Type annotations and error handling intact
+- ✅ Zero dead code remains eliminated
+- ✅ File size limits maintained (all files < 500 lines)
+
+---
+
+**Initial Refactoring completed by**: Claude Code
+**Date**: January 2025
+**Post-refactoring fixes completed by**: Claude Code
+**Date**: September 18, 2025
+**Total time investment**: Comprehensive analysis, implementation, and operational fixes
+**Code quality improvement**: Significant across all metrics
+**Final Status**: ✅ **FULLY OPERATIONAL AND TESTED**  

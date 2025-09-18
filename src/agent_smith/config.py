@@ -53,8 +53,5 @@ class TradingConfig(BaseModel):
             leverage=int(os.getenv("HL_LEVERAGE", "3"))
         )
 
-# Create a default config instance for convenience
-config = TradingConfig.from_env()
-
-# Also alias Config to TradingConfig for compatibility 
+# Also alias Config to TradingConfig for compatibility
 Config = TradingConfig
